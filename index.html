@@ -5,21 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Machine Learning Project</title>
   <style>
-
-    
     html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-    
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
     
     #main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
     nav {
       position: fixed;
       top: 0;
@@ -32,6 +30,7 @@
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+    
     nav a {
       color: white;
       text-decoration: none;
@@ -40,24 +39,29 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
+    
     nav a:hover {
       background-color: #3a3a5d;
       border-radius: 4px;
     }
+    
     section {
       display: none;
       padding: 100px 20px 60px;
       flex: 1;
       box-sizing: border-box;
     }
+    
     section.active {
       display: block;
     }
+    
     .content {
       max-width: 1000px;
       margin: 0 auto;
       width: 100%;
     }
+    
     .tab-button {
       display: block;
       margin: 10px 0;
@@ -72,9 +76,16 @@
       border-radius: 4px;
       transition: background-color 0.3s;
     }
+    
     .tab-button:hover {
       background-color: #3a3a5d;
     }
+    
+    .tab-button.active {
+      background-color: #3a3a5d;
+      border-left: 4px solid #4CAF50;
+    }
+    
     .tab-content {
       display: none;
       padding: 20px;
@@ -84,6 +95,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
+    
     .graph-box {
       margin: 1em 0;
       background-color: white;
@@ -92,12 +104,14 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
+    
     .graph-img {
       max-width: 100%;
       height: auto;
       border: 1px solid #eee;
       margin-top: 10px;
     }
+    
     .search-section {
       background: white;
       padding: 20px;
@@ -106,6 +120,7 @@
       max-width: 600px;
       margin: 0 auto;
     }
+    
     .search-section input[type="text"] {
       padding: 10px;
       width: 70%;
@@ -113,6 +128,7 @@
       border-radius: 4px;
       margin-right: 10px;
     }
+    
     .search-section button {
       padding: 10px 20px;
       background-color: #1e1e2f;
@@ -121,6 +137,7 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    
     header {
       padding: 120px 20px 60px;
       text-align: center;
@@ -128,30 +145,24 @@
       display: none;
       flex: 1;
     }
+    
     header.active {
       display: block;
     }
+    
     header h1 {
       font-size: 3em;
       margin-bottom: 0.5em;
       color: #1e1e2f;
     }
+    
     header p {
       font-size: 1.2em;
       color: #555;
       max-width: 800px;
       margin: 0 auto;
     }
-    #models-overview {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    #models-overview img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+    
     footer {
       background-color: #1e1e2f;
       color: white;
@@ -168,6 +179,7 @@
       margin: 0 auto;
       gap: 20px;
     }
+    
     #models-toc {
       width: 280px;
       background-color: white;
@@ -179,30 +191,24 @@
       overflow-y: auto;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      display: none;
     }
-    /*Added change*/
-    .tab-button.active {
-      background-color: #3a3a5d;
-      border-left: 4px solid #4CAF50;
-    }
+    
     #models-content {
       flex: 1;
       padding: 0 20px;
     }
     
-    /* Hide TOC when not in models section */
-    #models-toc {
-      display: none;
-    }
     #models.active #models-toc {
       display: block;
     }
-
+    
     /* Responsive adjustments */
     @media (max-width: 768px) {
       #models-container {
         flex-direction: column;
       }
+      
       #models-toc {
         width: 100%;
         position: static;
@@ -212,7 +218,6 @@
   </style>
 </head>
 <body>
-
   <div id="main-content">
     <nav>
       <a onclick="showSection('home')">Home</a>
@@ -224,64 +229,66 @@
       <a onclick="showSection('what-next')">What Next</a>
     </nav>
 
-  <header id="home" class="active">
-    <div class="content">
-      <h1>Smart URL Detection</h1>
-      <p style="font-size: 1.3em; color: #444;">
-        Empowering digital safety through machine learning.<br>
-        Our intelligent system helps users identify <strong>malicious websites</strong> before they click.
-      </p>
-  
-      <div style="margin: 40px auto; max-width: 600px;">
-        <img src="./URLdetect.png" alt="Cybersecurity Shield" style="max-width: 200px; display: block; margin: 0 auto 20px;">
-        <p style="font-size: 1.1em; line-height: 1.6;">
-          Using data-driven models and feature engineering, our platform scans and evaluates web URLs to distinguish harmful links from safe ones.
+    <header id="home" class="active">
+      <div class="content">
+        <h1>Smart URL Detection</h1>
+        <p style="font-size: 1.3em; color: #444;">
+          Empowering digital safety through machine learning.<br>
+          Our intelligent system helps users identify <strong>malicious websites</strong> before they click.
         </p>
+    
+        <div style="margin: 40px auto; max-width: 600px;">
+          <img src="./URLdetect.png" alt="Cybersecurity Shield" style="max-width: 200px; display: block; margin: 0 auto 20px;">
+          <p style="font-size: 1.1em; line-height: 1.6;">
+            Using data-driven models and feature engineering, our platform scans and evaluates web URLs to distinguish harmful links from safe ones.
+          </p>
+        </div>
+    
+        <a href="#models" onclick="showSection('models')" style="text-decoration: none;">
+          <button style="background-color: #1e1e2f; color: white; padding: 14px 30px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer;">
+            Explore the Models
+          </button>
+        </a>
       </div>
-  
-      <a href="#models" onclick="showSection('models')" style="text-decoration: none;">
-        <button style="background-color: #1e1e2f; color: white; padding: 14px 30px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer;">
-           Explore the Models
-        </button>
-      </a>
-    </div>
-  </header>
-  <section id="team" class="content">
-    <h2 style="text-align: center; margin-bottom: 30px;">Meet Our Team</h2>
-  
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-      <!-- Team Member Card 1 -->
-      <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
-        <img src="./Faustina Ayimbre.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 280px;">
-        <h3>Faustina Ayimbre</h3>
+    </header>
+
+    <section id="team" class="content">
+      <h2 style="text-align: center; margin-bottom: 30px;">Meet Our Team</h2>
+    
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <!-- Team Member Card 1 -->
+        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
+          <img src="./Faustina Ayimbre.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 280px;">
+          <h3>Faustina Ayimbre</h3>
+        </div>
+    
+        <!-- Team Member Card 2 -->
+        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
+          <img src="./Vivance.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 280px;">
+          <h3>Vivance Niyoyavuze</h3>
+        </div>
+    
+        <!-- Team Member Card 3 -->
+        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
+          <img src="./Boateng.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 180px;">
+          <h3>Christable Abena Boateng</h3>
+        </div>
+        
+        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
+          <img src="Norman Okaidja Williams.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 100px;">
+          <h3>Norman Okaidja Williams</h3>
+        </div>
       </div>
-  
-      <!-- Team Member Card 2 -->
-      <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
-        <img src="./Vivance.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 280px;">
-        <h3>Vivance Niyoyavuze</h3>
-      </div>
-  
-      <!-- Team Member Card 3 -->
-      <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
-        <img src="./Boateng.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 180px;">
-        <h3>Christable Abena Boateng</h3>
-      </div>
-      <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 280px; text-align: center;">
-        <img src="Norman Okaidja Williams.jpg" alt="Team Member" style="width: 80px; margin-bottom: 15px;border-radius: 100px;">
-        <h3>Norman Okaidja Williams</h3>
-      </div>
-    </div>
-  </section>
-  
-  
+    </section>
+    
     <section id="about" class="content">
       <div class="tab-content" style="display: block;">
         <h3>About us</h3>
-        <p>The Internet has become an essential part of our daily lives, but it has also opened doors for malicious activities like phishing. Phishers use social engineering techniques or fake websites to trick individuals and organizations into revealing sensitive information such as account IDs, usernames, and passwords.<br> While several methods have been proposed to detect phishing sites, phishers continuously adapt their tactics to evade detection.<br>
-            <p> Machine learning has proven to be one of the most effective approaches for identifying phishing attempts, as many phishing attacks share common patterns that can be recognized by machine learning algorithms.<p>      
-          </div>
+        <p>The Internet has become an essential part of our daily lives, but it has also opened doors for malicious activities like phishing. Phishers use social engineering techniques or fake websites to trick individuals and organizations into revealing sensitive information such as account IDs, usernames, and passwords.</p>
+        <p>Machine learning has proven to be one of the most effective approaches for identifying phishing attempts, as many phishing attacks share common patterns that can be recognized by machine learning algorithms.</p>      
+      </div>
     </section>
+    
     <section id="datasets" class="content">
       <h2>Datasets</h2>
       <div class="tab-content" style="display: block;">
@@ -291,62 +298,68 @@
       </div>
     </section>
     
+    <section id="graphs" class="content">
+      <h2>Data Visualizations</h2>
+      <div class="graph-box">
+        <img src="./Graph 2.jpg" alt="Feature Distribution" class="graph-img">
+      </div>
+      <div class="graph-box">
+        <img src="./Graph 3.jpg" alt="Correlation Matrix" class="graph-img">
+      </div>
+      <div class="graph-box">
+        <img src="./Graph 4.jpg" alt="Correlation Matrix" class="graph-img">
+      </div>
+      <div class="graph-box">
+        <img src="./Graph 5.jpg" alt="Correlation Matrix" class="graph-img">
+      </div>
+      <div class="graph-box">
+        <img src="./Graph 6.jpg" alt="Correlation Matrix" class="graph-img">
+      </div>
+    </section>
     
-  
     <section id="models">
       <div id="models-container">
         <div id="models-toc">
-          <button class="tab-button" onclick="toggleContent('data-loading')">1. Loading Data</button>
-          <button class="tab-button" onclick="toggleContent('visualizing-data')">2. Visualizing Data</button>
-          <button class="tab-button" onclick="toggleContent('splitting-data')">3. Splitting Data</button>
-          <button class="tab-button" onclick="toggleContent('logistic-regression')">4. Logistic Regression</button>
-          <button class="tab-button" onclick="toggleContent('knn')">5. K-Nearest Neighbors</button>
-          <button class="tab-button" onclick="toggleContent('naive-bayes')">6. Naive Bayes</button>
-          <button class="tab-button" onclick="toggleContent('decision-trees')">7. Decision Tree </button>
-          <button class="tab-button" onclick="toggleContent('comparison-model')">8. Model Comparison</button>
+          <button class="tab-button" onclick="toggleContent('data-loading', event)">1. Loading Data</button>
+          <button class="tab-button" onclick="toggleContent('visualizing-data', event)">2. Visualizing Data</button>
+          <button class="tab-button" onclick="toggleContent('splitting-data', event)">3. Splitting Data</button>
+          <button class="tab-button" onclick="toggleContent('logistic-regression', event)">4. Logistic Regression</button>
+          <button class="tab-button" onclick="toggleContent('knn', event)">5. K-Nearest Neighbors</button>
+          <button class="tab-button" onclick="toggleContent('naive-bayes', event)">6. Naive Bayes</button>
+          <button class="tab-button" onclick="toggleContent('decision-trees', event)">7. Decision Tree</button>
+          <button class="tab-button" onclick="toggleContent('comparison-model', event)">8. Model Comparison</button>
         </div>
         
         <div id="models-content">
-          
-          
-          <!-- Content for each tab -->
           <div class="tab-content" id="data-loading">
             <div class="graph-box">
-                <h3>1. Loading Data</h3>
-              <img src="./LD1.jpg "alt="Data Sample" class="graph-img">
+              <h3>1. Loading Data</h3>
+              <img src="./LD1.jpg" alt="Data Sample" class="graph-img">
             </div>
             <div class="graph-box">
-                <img src="./LD1.jpg"alt="Data Sample" class="graph-img">
-              </div>
+              <img src="./LD1.jpg" alt="Data Sample" class="graph-img">
+            </div>
           </div>
-  
+    
           <div class="tab-content" id="visualizing-data">
             <h3>2. Visualizing Data</h3>
             <div class="graph-box">
-          
               <img src="./Visual 1.jpg" alt="Feature Distributions" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Visual 2.jpg" alt="Feature Distributions" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Visual 3.jpg" alt="Feature Distributions" class="graph-img">
             </div>
             <div class="graph-box">
-              
-                <img src="./Visual 4.jpg" alt="Feature Distributions" class="graph-img">
-              </div>
-              
-              <div class="graph-box">
-              
-                <img src="./Visual 5.jpg" alt="Feature Distributions" class="graph-img">
-              </div>
-    
-              
+              <img src="./Visual 4.jpg" alt="Feature Distributions" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Visual 5.jpg" alt="Feature Distributions" class="graph-img">
+            </div>
           </div>
-  
+    
           <div class="tab-content" id="splitting-data">
             <h3>3. Splitting Data</h3>
             <div class="graph-box">
@@ -354,154 +367,120 @@
               <img src="./Splittin 1.jpg" alt="Data Split" class="graph-img">
             </div>
             <div class="graph-box">
-                <img src="./Splitting 2.jpg" alt="Data Split" class="graph-img">
-                <div class="graph-box">
-                    <img src="./Splitting 3.jpg" alt="Data Split" class="graph-img">
-                  </div>
-              </div>
+              <img src="./Splitting 2.jpg" alt="Data Split" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Splitting 3.jpg" alt="Data Split" class="graph-img">
+            </div>
           </div>
-  
+    
           <div class="tab-content" id="logistic-regression">
             <h3>4. Logistic Regression</h3>
             <div class="graph-box">
-              
               <img src="./Logistic 1.jpg" alt="Confusion Matrix" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./Logistic 2.jpg" alt="Confusion Matrix" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Logistic 3.jpg" alt="Confusion Matrix" class="graph-img">
             </div>
             <div class="graph-box">
-              
-                <img src="./Logistic 4.jpg" alt="Confusion Matrix" class="graph-img">
-              </div>
-              <div class="graph-box">
-              
-                <img src="./Logistic 5.jpg" alt="Confusion Matrix" class="graph-img">
-              </div>
-              <div class="graph-box">
-              
-                <img src="./logitic 6.jpg" alt="Confusion Matrix" class="graph-img">
-              </div>
-              <div class="graph-box">
-              
-                <img src="./Logistic 7.jpg" alt="Confusion Matrix" class="graph-img">
-              </div>
+              <img src="./Logistic 4.jpg" alt="Confusion Matrix" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Logistic 5.jpg" alt="Confusion Matrix" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./logitic 6.jpg" alt="Confusion Matrix" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Logistic 7.jpg" alt="Confusion Matrix" class="graph-img">
+            </div>
           </div>
-  
+    
           <div class="tab-content" id="knn">
             <h3>5. K-Nearest Neighbors</h3>
             <div class="graph-box">
-            
               <img src="./K-Nearest 1.jpg" alt="KNN Visualization" class="graph-img">
             </div>
-      
             <div class="graph-box">
-              
               <img src="./K-Nearest 2.jpg" alt="KNN Visualization" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./K-Nearest 3.jpg" alt="KNN Visualization" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./K-nearest 4.jpg" alt="KNN Visualization" class="graph-img">
             </div>
             <div class="graph-box">
-        
               <img src="./K-Nearest 5.jpg" alt="KNN Visualization" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./K-Nearest 6.jpg" alt="KNN Visualization" class="graph-img">
             </div>
             <div class="graph-box">
-             
-                <img src="./K-Nearest 7.jpg" alt="KNN Visualization" class="graph-img">
-              </div>
-              <div class="graph-box">
-             
-                <img src="./K-Nearest 8.jpg" alt="KNN Visualization" class="graph-img">
-              </div>
+              <img src="./K-Nearest 7.jpg" alt="KNN Visualization" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./K-Nearest 8.jpg" alt="KNN Visualization" class="graph-img">
+            </div>
           </div>
-  
+    
           <div class="tab-content" id="naive-bayes">
             <h3>6. Naive Bayes</h3>
             <div class="graph-box">
-              
               <img src="./Naive 1.jpg" alt="Naive Bayes" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./Naive 2.jpg" alt="Naive Bayes" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./Naive 3.jpg" alt="Naive Bayes" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Naive 4.jpg" alt="Naive Bayes" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Naive 5.jpg" alt="Naive Bayes" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Naive 6.jpg" alt="Naive Bayes" class="graph-img">
             </div>
             <div class="graph-box">
-              
-                <img src="./Naive 7.jpg" alt="Naive Bayes" class="graph-img">
-              </div>
-              <div class="graph-box">
-              
-                <img src="./Naive 8.jpg" alt="Naive Bayes" class="graph-img">
-              </div>
-    
-              <div class="graph-box">
-              
-                <img src="./Naive 9.jpg" alt="Naive Bayes" class="graph-img">
-              </div>
-              <div class="graph-box">
-              
-                <img src="./Naive 10.jpg" alt="Naive Bayes" class="graph-img">
-              </div>
-              <div class="graph-box">
-              
-                <img src="./Naive 11.jpg" alt="Naive Bayes" class="graph-img">
-              </div>
-    
+              <img src="./Naive 7.jpg" alt="Naive Bayes" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Naive 8.jpg" alt="Naive Bayes" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Naive 9.jpg" alt="Naive Bayes" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Naive 10.jpg" alt="Naive Bayes" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Naive 11.jpg" alt="Naive Bayes" class="graph-img">
+            </div>
           </div>
-  
+    
           <div class="tab-content" id="decision-trees">
-
             <h3>7. Decision Trees</h3>
             <div class="graph-box">
               <img src="./Tree 1.jpg" alt="Decision Tree" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./Tree 2.jpg" alt="Decision Tree" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Tree 3.jpg" alt="Decision Tree" class="graph-img">
             </div>
             <div class="graph-box">
-              
               <img src="./Tree 4.jpg" alt="Decision Tree" class="graph-img">
             </div>
             <div class="graph-box">
-                <img src="./Tree 5.jpg" alt="Decision Tree" class="graph-img">
-              </div>
-            
+              <img src="./Tree 5.jpg" alt="Decision Tree" class="graph-img">
+            </div>
             <div class="graph-box">
               <img src="./Tree 6.jpg" alt="Decision Tree" class="graph-img">
             </div>
@@ -512,85 +491,56 @@
               <img src="./Tree 8.jpg" alt="Decision Tree" class="graph-img">
             </div>
             <div class="graph-box">
-                <img src="./Tree 9.jpg" alt="Decision Tree" class="graph-img">
+              <img src="./Tree 9.jpg" alt="Decision Tree" class="graph-img">
             </div>
           </div>
-  
+    
           <div class="tab-content" id="comparison-model">
             <h3>8. Model Comparison</h3>
             <div class="graph-box">
-             
               <img src="./Compare 1.jpg" alt="Model Comparison" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./Compare 2.jpg" alt="Model Comparison" class="graph-img">
             </div>
             <div class="graph-box">
-             
               <img src="./Compare 3.jpg" alt="Model Comparison" class="graph-img">
             </div>
             <div class="graph-box">
-             
-                <img src="./Compare 4.jpg" alt="Model Comparison" class="graph-img">
-              </div>
-              <div class="graph-box">
-             
-                <img src="./Compare 5.jpg" alt="Model Comparison" class="graph-img">
-              </div>
+              <img src="./Compare 4.jpg" alt="Model Comparison" class="graph-img">
+            </div>
+            <div class="graph-box">
+              <img src="./Compare 5.jpg" alt="Model Comparison" class="graph-img">
+            </div>
           </div>
-  
+        </div>
       </div>
     </section>
-    <section id="graphs" class="content">
-        <h2>9.Data Visualizations</h2>
-       
-        <div class="graph-box">
-          <img src="./Graph 2.jpg" alt="Feature Distribution" class="graph-img">
-        </div>
-        <div class="graph-box">
-          <img src="./Graph 3.jpg" alt="Correlation Matrix" class="graph-img">
-          </div>
-          <div class="graph-box">
-              <img src="./Graph 4.jpg" alt="Correlation Matrix" class="graph-img">
-              </div>
-              <div class="graph-box">
-                  <img src="./Graph 5.jpg" alt="Correlation Matrix" class="graph-img">
-                  </div>
-                  <div class="graph-box">
-                      <img src="./Graph 6.jpg" alt="Correlation Matrix" class="graph-img">
-                      </div>
-      </section>
-  
+    
     <section id="what-next" class="content">
       <h2>Enter a URL to check if it is legitimate or potentially phishing.</h2>
       <div class="search-section" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
         <input type="text" placeholder="Paste URL here..." id="url-input">
         <button onclick="checkURL()">Check</button>
       </div>
-
+    
       <div class="tab-content" style="display: block;">
         <h3>What next</h3>
         <p>We stand firm against any deceptive websites designed to impersonate legitimate platforms with the intent to steal user data or credentials.
-            <br> Phishing attacks, a dangerous form of social engineering, exploit users by creating sites that closely mimic genuine ones, making them difficult to identify.<br> With our predictions and safeguards, we ensure that such malicious tactics are identified and mitigated to protect user trust and security.</p> 
-          </div>
+          <br> Phishing attacks, a dangerous form of social engineering, exploit users by creating sites that closely mimic genuine ones, making them difficult to identify.<br> With our predictions and safeguards, we ensure that such malicious tactics are identified and mitigated to protect user trust and security.</p> 
+      </div>
     </section>
-
-    
-    
-    
   </div>
   
   <footer>
     <p>&copy; Machine Learning Team</p>
   </footer>
 
-  <!-- Updated Script Section with CSV-specific handling -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
   <script>
     let dataset = [];
 
-    // 1. DATA LOADING WITH CSV STRUCTURE AWARENESS ========================
+
     document.getElementById('file-upload').addEventListener('change', function(e) {
       const file = e.target.files[0];
       
@@ -600,11 +550,11 @@
         complete: function(results) {
           dataset = results.data;
           
-          // Debug: Verify we're reading the CSV correctly
+          
           console.log("First 3 entries from CSV:", dataset.slice(0, 3));
           console.log("Column names detected:", Object.keys(dataset[0] || {}));
           
-          // Update status with CSV-specific info
+        
           const statusEl = document.getElementById('upload-status');
           if (dataset.length > 0) {
             const firstUrl = dataset[0].URL || dataset[0].url || 'No URL column found';
@@ -622,11 +572,10 @@
       });
     });
 
-    
+
     function cleanURL(url) {
       if (!url || typeof url !== 'string') return '';
       
-      // Special handling for your CSV format:
       return url
         .replace(/^https?:\/\/(www\.)?/i, '')  
         .replace(/\/+$/, '')                   
@@ -635,7 +584,7 @@
         .trim();
     }
 
-    
+    // 3. URL CHECK FUNCTION
     function checkURL() {
       const inputRaw = document.getElementById('url-input').value.trim();
       
@@ -647,13 +596,10 @@
       const inputUrl = cleanURL(inputRaw);
       console.log("Searching for:", inputUrl);
 
-      
       let foundEntry = null;
-      
       
       for (const entry of dataset) {
         const entryUrl = cleanURL(entry.URL || entry.url); 
-        
         
         if (entryUrl === inputUrl) {
           foundEntry = entry;
@@ -666,12 +612,12 @@
         }
       }
 
-      // Display results - specific to your CSV labels (1/0 or other values)
+
       if (foundEntry) {
         const label = foundEntry.label;
         let resultMessage = `URL: ${foundEntry.URL || foundEntry.url}\n`;
         
-        // Interpret label based on your CSV
+
         if (label === '1') {
           resultMessage += "Result: Likely LEGITIMATE (label = 1)";
         } else if (label === '0') {
@@ -688,74 +634,50 @@
       }
     }
 
-    // 
     function showSection(sectionId) {
       document.querySelectorAll('section, header').forEach(el => {
         el.classList.remove('active');
       });
+      
       document.getElementById(sectionId).classList.add('active');
+      
       window.scrollTo(0, 0);
+      
+      if (sectionId === 'models') {
+        const firstTab = document.querySelector('#models-toc .tab-button');
+        if (firstTab) {
+          toggleContent(firstTab.getAttribute('onclick').match(/'([^']+)'/)[1], {target: firstTab});
+        }
+      }
     }
 
-    // 
-    function testWithSampleData() {
-      console.log("=== Testing with Your CSV Structure ===");
-      
-      
-      const testCases = [
-        "https://www.southbankmosaics.com",  
-        "www.uni-mainz.de",                 
-        "voicefmradio.co.uk",               
-        "invalid-test-url.com"              
-      ];
-      
-      testCases.forEach(url => {
-        console.log(`\nTesting URL: ${url}`);
-        document.getElementById('url-input').value = url;
-        checkURL();
-      });
-    }
-   
-    
-    // NEW FUNCTION: Toggle model content sections
-    function toggleContent(contentId) {
-      // Hide all tab contents
+    function toggleContent(contentId, event) {
       document.querySelectorAll('#models-content .tab-content').forEach(content => {
         content.style.display = 'none';
       });
       
-      // Remove active class from all buttons
+
       document.querySelectorAll('#models-toc .tab-button').forEach(button => {
         button.classList.remove('active');
       });
       
-      // Show the selected content
       const contentToShow = document.getElementById(contentId);
       if (contentToShow) {
         contentToShow.style.display = 'block';
       }
       
-      // Add active class to clicked button
-      const clickedButton = event.target;
-      clickedButton.classList.add('active');
-      
-      // Scroll to the content
-      contentToShow.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    // Initialize - show first tab by default
-    document.addEventListener('DOMContentLoaded', function() {
-      // Show first tab content when page loads
-      const firstTab = document.querySelector('#models-toc .tab-button');
-      if (firstTab) {
-        firstTab.click();
+      if (event && event.target) {
+        event.target.classList.add('active');
       }
       
-      
-      showSection('home'); // 
+      if (contentToShow) {
+        contentToShow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      showSection('home');
     });
-    
-  
   </script>
 </body>
 </html>
